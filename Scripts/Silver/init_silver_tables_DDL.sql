@@ -1,3 +1,25 @@
+/*
+******************************************************
+Script for creating structure for silver layer tables
+******************************************************
+
+Purpose: 
+Creates table structure for the silver layer following the naming conventions of tables named for their source systems 
+and columns named for the columns from their source system. 
+
+Transformations: 
+- Data Cleansing
+- Data Standardizations
+- Data Normalization 
+- Derived Columns added for Meta Data
+- Data Enrichment 
+
+WARNING
+**********************************************************************************************************************************
+This script will drop tables if they exist, if data is present, it will be lost if this script is run, back up data before running
+**********************************************************************************************************************************
+*/
+
 IF OBJECT_ID('silver.crm_cust_info', 'U') IS NOT NULL
 	DROP TABLE silver.crm_cust_info;
 CREATE TABLE silver.crm_cust_info(
